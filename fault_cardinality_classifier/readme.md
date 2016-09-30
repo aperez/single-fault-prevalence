@@ -50,15 +50,6 @@ it means that there is one component that is involved every fault-revealing test
 above, component `c3` is active in every test, so we consider `C+1` as being a **single fault fix**.
 We can use [npcardoso/MHS2](https://github.com/npcardoso/MHS2) as an MHS implementation.
 
-If there is more than one MHS solution of cardinality `1`, we will label `C+1` as a **multiple fault
-fix**. For instance, the matrix below yields two solutions (both `c1` and `c3`):
-
-<img src="docs/figures/matrix6.png" width="350" />
-
-Since we are filtering ambiguity groups in `Matrix 3`, it means that components `c1` and `c3` do not
-share the same activity pattern and can be distinguished from one another. At the component level of
-granularity, they can be considered as multiple fixes.
-
 If the matrix is shaped as below:
 
 <img src="docs/figures/matrix7.png" width="350" />
