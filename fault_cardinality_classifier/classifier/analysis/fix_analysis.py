@@ -37,10 +37,13 @@ class FixAnalysis(object):
             trie = mhs.calculate(spectrum_fixed, spectrum_filter=sf.copy())
             hitting_sets = list(trie)
 
+            min_hs = min([len(x) for x in hitting_sets])
+            hitting_sets = [x for x in hitting_sets if len(x) == min_hs]
+
             classification = str()
             if len(hitting_sets) == 0:
                 classification = "not-a-fix"
-            elif len(hitting_sets) == 1 and len(hitting_sets[0]) == 1:
+            elif len(hitting_sets[0]) == 1:
                 classification = "single-fault"
             else:
                 classification = "multiple-fault"
